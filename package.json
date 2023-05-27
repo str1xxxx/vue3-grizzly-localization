@@ -1,0 +1,30 @@
+{
+  "name": "vue3-grizzly-localization",
+  "version": "1.0.0",
+  "description": "A simple and lightweight localization library for Vue 3",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/str1xxxx/vue3-grizzly-localization.git"
+  },
+  "keywords": [
+    "vue",
+    "vue3",
+    "localization",
+    "i18n",
+    "grizzly"
+  ],
+  "author": "str1x",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/str1xxxx/vue3-grizzly-localization/issues"
+  },
+  "homepage": "https://github.com/str1xxxx/vue3-grizzly-localization#readme",
+  "dependencies": {
+    "vue": "^3.3.4"
+  }
+}
