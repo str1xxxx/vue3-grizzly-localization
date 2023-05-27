@@ -13,7 +13,7 @@ npm install vue3-grizzly-localization
 ## Usage
 First, initialize Grizzly Localization in your main.js file:
 
-```bash
+```js
 import { createGrizzly } from 'vue3-grizzly-localization';
 
 const grizzly = createGrizzly({
@@ -33,7 +33,7 @@ app.use(grizzly);
 
 Then, use Grizzly Localization in your components:
 
-```bash
+```js
 import { useGrizzly } from 'vue3-grizzly-localization';
 
 const { t } = useGrizzly();
@@ -43,7 +43,7 @@ console.log(t('hello')); // 'Hello'
 
 You can also specify a namespace when calling useGrizzly:
 
-```bash
+```js
 const { t } = useGrizzly('namespace');
 
 console.log(t('key')); // 'Translation'
