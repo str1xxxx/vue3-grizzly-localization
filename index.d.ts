@@ -1,4 +1,4 @@
-declare module "grizzly" {
+declare module "vue3-grizzly-localization" {
   export interface LocaleMessages {
     [key: string]: string | LocaleMessages;
   }

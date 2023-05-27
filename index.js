@@ -16,12 +16,20 @@ export function createGrizzly(options) {
     return current;
   }
 
+  function changeLanguage(lang) {
+    if (locales[lang]) {
+      currentLang.value = lang;
+    } else {
+      console.warn(`The language "${lang}" is not loaded in Grizzly.`);
+    }
+  }
+
   function useGrizzly(namespace = "") {
     function tNamespaced(key) {
       return t(`${namespace ? namespace + "." : ""}${key}`);
     }
 
-    return { t: tNamespaced };
+    return { t: tNamespaced, changeLanguage };
   }
 
   return {
