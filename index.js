@@ -24,12 +24,16 @@ export function createGrizzly(options) {
     }
   }
 
+  function availableLanguages() {
+    return Object.keys(locales);
+  }
+
   function useGrizzly(namespace = "") {
     function tNamespaced(key) {
       return t(`${namespace ? namespace + "." : ""}${key}`);
     }
 
-    return { t: tNamespaced, changeLanguage };
+    return { t: tNamespaced, changeLanguage, availableLanguages };
   }
 
   return {
