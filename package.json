@@ -1,6 +1,6 @@
 {
   "name": "vue3-grizzly-localization",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple and lightweight localization library for Vue 3",
   "main": "index.js",
   "types": "index.d.ts",

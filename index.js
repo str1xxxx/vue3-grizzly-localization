@@ -4,7 +4,7 @@ export function createGrizzly(options) {
   const currentLang = ref(options.lang);
   const locales = options.locales;
 
-  function t(key) {
+  function t(key, interpolationValues) {
     const keys = key.split(".");
     let current = locales[currentLang.value];
     for (let i = 0; i < keys.length; i++) {
@@ -13,6 +13,16 @@ export function createGrizzly(options) {
         return key;
       }
     }
+
+    if (interpolationValues) {
+      for (const placeholder in interpolationValues) {
+        current = current.replace(
+          new RegExp(`{${placeholder}}`, "g"),
+          interpolationValues[placeholder]
+        );
+      }
+    }
+
     return current;
   }
 
@@ -29,8 +39,11 @@ export function createGrizzly(options) {
   }
 
   function useGrizzly(namespace = "") {
-    function tNamespaced(key) {
-      return t(`${namespace ? namespace + "." : ""}${key}`);
+    function tNamespaced(key, interpolationValues) {
+      return t(
+        `${namespace ? namespace + "." : ""}${key}`,
+        interpolationValues
+      );
     }
 
     return { t: tNamespaced, changeLanguage, availableLanguages };
