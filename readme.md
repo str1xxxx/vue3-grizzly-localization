@@ -69,6 +69,38 @@ const { availableLanguages } = useGrizzly();
 console.log(availableLanguages()); // ['en', 'ua']
 ```
 
+## Interpolation
+
+Grizzly Localization supports interpolation of variables within translations. You can provide an object containing placeholder-value pairs as a second argument to the `t` function:
+
+```js
+import { useGrizzly } from "vue3-grizzly-localization";
+
+const { t } = useGrizzly();
+
+console.log(t("welcome", { name: "John" })); // 'Welcome, John'
+```
+
+For this to work, your locales object should contain placeholders wrapped in curly braces:
+
+```js
+const grizzly = createGrizzly({
+  lang: "en",
+  locales: {
+    en: {
+      welcome: "Welcome, {name}",
+    },
+    ua: {
+      welcome: "Привіт, {name}",
+    },
+  },
+});
+
+app.use(grizzly);
+```
+
+Note: The placeholders in your strings must match the keys in the provided interpolation object.
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a pull request.
