@@ -11,7 +11,7 @@ declare module "vue3-grizzly-localization" {
   }
 
   export interface GrizzlyInstance {
-    t(key: string): string | undefined;
+    t(key: string, interpolationValues?: Record<string, unknown>): string | undefined;
     changeLanguage(lang: string): void;
     availableLanguages(): string[];
   }
