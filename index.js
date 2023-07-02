@@ -1,7 +1,7 @@
-import { ref, inject } from "vue";
+import { reactive, inject } from "vue";
 
 export function createGrizzly(options) {
-  const currentLang = ref(options.lang);
+  const currentLang = reactive({ value: options.lang });
   const locales = options.locales;
 
   function t(key, interpolationValues) {
